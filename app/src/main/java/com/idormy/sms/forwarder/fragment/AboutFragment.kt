@@ -17,7 +17,6 @@ import com.idormy.sms.forwarder.utils.CommonUtils.Companion.previewPicture
 import com.idormy.sms.forwarder.utils.HistoryUtils
 import com.idormy.sms.forwarder.utils.HttpServerUtils
 import com.idormy.sms.forwarder.utils.XToastUtils
-import com.idormy.sms.forwarder.utils.sdkinit.XUpdateInit
 import com.xuexiang.xaop.annotation.SingleClick
 import com.xuexiang.xpage.annotation.Page
 import com.xuexiang.xui.widget.actionbar.TitleBar
@@ -65,9 +64,6 @@ class AboutFragment : BaseFragment<FragmentAboutBinding?>(), SuperTextView.OnSup
     }
 
     override fun initListeners() {
-        binding!!.btnUpdate.setOnClickListener {
-            XUpdateInit.checkUpdate(requireContext(), true)
-        }
         binding!!.btnCache.setOnClickListener {
             HistoryUtils.clearPreference()
             CacheUtils.clearAllCache(requireContext())
